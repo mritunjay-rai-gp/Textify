@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
 export default function Navbar(props) {
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    props.onSearch(query);
+    setQuery(""); // Clear after search
+  };
   return (
     <nav className={`navbar bg-${props.mode} border-bottom border-body`} data-bs-theme={props.mode}>
       <div className="container-fluid">
@@ -17,8 +24,8 @@ export default function Navbar(props) {
               <Link className="nav-link active" aria-current="page" to="/about">About</Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <form className="d-flex" onSubmit={handleSearch} role="search">
+            <input className="form-control me-2" type="search" placeholder="Search" value={query} aria-label="Search" onChange={(e) => setQuery(e.target.value)} />
             <button className="btn btn-outline-danger" type="submit">Search</button>
           </form>
           <div className="form-check form-switch ms-3">

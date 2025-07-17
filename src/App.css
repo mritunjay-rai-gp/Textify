@@ -27,3 +27,35 @@
   accent-color: red;
 }
 
+.textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.highlighted-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+  z-index: 1;
+  pointer-events: none;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid red;
+  background-color: #f5f5f5;
+  min-height: 160px;
+  line-height: 1.5;
+}
+
+.text-input {
+  position: relative;
+  background: transparent;
+  z-index: 2;
+  resize: none;
+}
+.highlighted-text mark {
+  background-color: yellow;
+  color: black;
+}
