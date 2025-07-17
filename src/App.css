@@ -1,0 +1,29 @@
+.form-control:focus {
+  border-color: red !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
+}
+.form-check-input:checked {
+  background-color: red !important;
+  border-color: red !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25) !important;
+}
+/* Make the switch track and thumb red */
+.custom-switch:checked {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.custom-switch {
+  accent-color: red;
+}
+/* Force red background on checked switch */
+.form-check-input.custom-switch:checked {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+/* Make the thumb inside the switch red */
+.form-check-input.custom-switch {
+  accent-color: red;
+}
+
