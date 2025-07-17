@@ -10,9 +10,6 @@ import { Route, Routes } from 'react-router';
 
    function App() {
     const [alert, setalert] = useState(null)
-    const [text, setText] = useState(""); // 🔑 Shared text state
-    const [searchTerm, setSearchTerm] = useState("");
-    
     function showAlert(message,type){
       setalert({
       msg:message,
@@ -36,18 +33,10 @@ import { Route, Routes } from 'react-router';
   return (
     <>
  
-<Navbar mode={mode} toggleMode={toggleMode} onSearch={(term) => {
-          if (!term) return;
-          setSearchTerm(term);
-          if (!text.toLowerCase().includes(term.toLowerCase())) {
-            showAlert("Result not found", "danger");
-          }
-        }} />
+<Navbar mode={mode} toggleMode={toggleMode} />
 <Alert alert={alert}/>
 <Routes>
-<Route path='/' element={<Home showAlert={showAlert} text={text}
-              setText={setText}
-              searchTerm={searchTerm}/>}/>
+<Route path='/' element={<Home showAlert={showAlert} />}/>
 <Route path='/about' element={<About/>}/>
 </Routes>
 </>
