@@ -9,7 +9,7 @@ import { Route, Routes } from 'react-router';
 
 
    function App() {
-    const [alert, setalert] = useState(null)
+    const [alert, setalert] = useState(null);
     function showAlert(message,type){
       setalert({
       msg:message,

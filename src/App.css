@@ -59,3 +59,18 @@
   background-color: yellow;
   color: black;
 }
+.accordion-button {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: red !important;
+  color: white !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: red;
+}
